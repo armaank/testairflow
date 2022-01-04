@@ -26,7 +26,7 @@ from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.subdag_operator import SubDagOperator
 from airflow.utils.dates import days_ago
 
-DAG_NAME = 'example_subdag_operator'
+DAG_NAME = 'example_subdag_operator_2'
 
 args = {
     'owner': 'Airflow',
@@ -46,8 +46,8 @@ start = DummyOperator(
 )
 
 section_1 = SubDagOperator(
-    task_id='section-1',
-    subdag=subdag(DAG_NAME, 'section-1', args),
+    task_id='section-1-subdag',
+    subdag=subdag(DAG_NAME, 'section-1-subdag', args),
     dag=dag,
 )
 
@@ -57,8 +57,8 @@ some_other_task = DummyOperator(
 )
 
 section_2 = SubDagOperator(
-    task_id='section-2',
-    subdag=subdag(DAG_NAME, 'section-2', args),
+    task_id='section-2-subdag',
+    subdag=subdag(DAG_NAME, 'section-2-subdag', args),
     dag=dag,
 )
 
