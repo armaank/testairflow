@@ -65,7 +65,7 @@ def task_group_function(value):
 
 # Executing Tasks and TaskGroups
 with DAG(
-    dag_id="example_task_group_decorator", start_date=datetime(2021, 1, 1), catchup=False, tags=["example"]
+    dag_id="example_task_group_decorator_2", start_date=datetime(2021, 1, 1), catchup=False, tags=["example"]
 ) as dag:
     start_task = task_start()
     end_task = task_end()
