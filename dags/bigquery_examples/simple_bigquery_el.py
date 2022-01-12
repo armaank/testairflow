@@ -15,6 +15,8 @@ from airflow.utils.task_group import TaskGroup
 import json
 
 
+
+
 DATASET = 'simple_bigquery_example_dag'
 TABLE = 'forestfires'
 
